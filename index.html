@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ========== EN-TÊTE ========== -->
+  <header>
+    <h1>IBIDOUN Abiola Aymaric</h1>
+    <nav>
+      <ul>
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#competences">Compétences</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#hobbies">Hobbies</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <!-- ========== ACCUEIL ========== -->
+  <section id="accueil">
+    <img src="maphoto.jpg" alt="Photo de profil" class="photo-profil">
+    <h2>Bienvenue sur mon portfolio</h2>
+    <p>Je suis un développeur web amateur passionné par la création de sites simples, modernes et efficaces.</p>
+  </section>
+
+
+  <!-- ========== À PROPOS ========== -->
+  <section id="apropos">
+    <h2>À propos de moi</h2>
+    <p>Je me nomme IBIDOUN Abiola Aymaric. Biologiste médical de profession avec 05 années d'expérience, 
+    je mi'interesse à toute technologie qui pourrait faciliter le quotidien de ma communauté. 
+    Et donc j’ai eu la chance de participer à cette formation que je vois comme un véritable Game Changer pour mes perpectives futures. 
+    Mon objectif est de progresser et de montrer mes compétences à travers mes projets personnels.</p>
+<p> <!-- Bouton de téléchargement -->
+  <a href="Cvpro.pdf" download>
+    <button>Télécharger mon CV</button>
+  </a>  </p>
+
+  <!-- ========== COMPÉTENCES ========== -->
+  <section id="competences">
+    <h2>Mes Compétences</h2>
+    <ul>
+      <li>Connaissances en Biologie humaine</li>
+      <li>Analyses de données statistiques avec SPSS, JAMOVI, STATA et R</li>
+      <li>Gestion de projet</li>
+      <li>HTML / CSS, JavaScript de base</li>
+      <li>Rédaction d'articles scientifiques</li>
+      <li>Création de sites</li>
+    </ul>
+  </section>
+
+
+  <!-- ========== PROJETS ========== -->
+  <section id="projets">
+    <h2>Mes Projets</h2>
+    <div class="projet">
+      <h3>Plateforme de servives de rédaction de CV</h3>
+      <p>A travers Ologo servives j'offre à prix abordable la rédaction de CV accrocheur</p>
+<p> <!-- Bouton de visualisation -->
+  <a href="ologo.jpg" download>
+    <button>Voir notre affiche</button>
+  </a>  </p>
+    </div>
+    <div class="projet">
+      <h3>Calculatrice</h3>
+      <p>Une application JavaScript permettant d’effectuer des calculs de prêt hypotécaire.</p>
+
+  <label for="montant">Montant du prêt (€) :</label>
+  <input type="number" id="montant" placeholder="Ex : 150000">
+
+  <label for="taux">Taux d'intérêt annuel (%) :</label>
+  <input type="number" id="taux" placeholder="Ex : 3.5" step="0.01">
+
+  <label for="duree">Durée du prêt (années) :</label>
+  <input type="number" id="duree" placeholder="Ex : 20">
+
+  <button onclick="calculerMensualite()">Calculer le paiement mensuel</button>
+
+  <p id="resultat">Paiement mensuel : —</p>
+
+  <script>
+    function calculerMensualite() {
+      // Récupération des valeurs
+      const P = parseFloat(document.getElementById("montant").value);
+      const tauxAnnuel = parseFloat(document.getElementById("taux").value);
+      const duree = parseInt(document.getElementById("duree").value);
+
+      // Validation des valeurs
+      if (isNaN(P) || P <= 0) {
+        alert("⚠️ Montant du prêt invalide !");
+        return;
+      }
+      if (isNaN(tauxAnnuel) || tauxAnnuel <= 0) {
+        alert("⚠️ Taux d'intérêt invalide !");
+        return;
+      }
+      if (isNaN(duree) || duree <= 0) {
+        alert("⚠️ Durée du prêt invalide !");
+        return;
+      }
+
+      // Conversion taux annuel en taux mensuel
+      const r = tauxAnnuel / 100 / 12;
+
+      // Nombre total de mensualités
+      const n = duree * 12;
+
+      // Formule de paiement mensuel : M = P * (r*(1+r)^n) / ((1+r)^n - 1)
+      const M = P * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+
+      // Affichage du résultat arrondi à 2 décimales
+      document.getElementById("resultat").textContent = "Paiement mensuel : " + M.toFixed(2) + " €";
+    }
+  </script>
+
+    </div>
+  </section>
+
+
+  <!-- ========== HOBBIES ========== -->
+  <section id="hobbies">
+    <h2>Mes Hobbies</h2>
+<ul>
+      <li>Exercices de méditation</li>
+      <li>Ecouter la musique</li>
+      <li>Voyager</li>
+      <li>Jouer au tennis, séance musculation à la salle de gym</li>
+      <li>Lecture</li>
+      <li> Dernièrement web development enthusiast</li>
+    </ul>
+
+
+
+
+
+  </section>
+
+  <!-- ========== FORMULAIRE DE CONTACT ========== -->
+  <section id="contact">
+    <h2>Contactez-moi</h2>
+    <form id="formulaire">
+      <label for="nom">Nom :</label><br>
+      <input type="text" id="nom" name="nom" required><br><br>
+
+      <label for="email">Email :</label><br>
+      <input type="email" id="email" name="email" required><br><br>
+
+      <label for="message">Message :</label><br>
+      <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+      <button type="submit">Envoyer</button>
+    </form>
+  </section>
+
+
+  <!-- ========== PIED DE PAGE ========== -->
+  <footer>
+    <p><li>© Designed by Aymaric A with HTML CSS JS</li> </p>          
+     <p><li>Tous droits réservés-2025</li></p>
+  </footer>
+
+  <!-- On liera plus tard notre JavaScript -->
+  <script src="script.js"></script>
+
+</body>
+</html>
+  
+
+ 
