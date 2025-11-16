@@ -1,0 +1,141 @@
+/* ================== STYLE GLOBAL ================== */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  scroll-behavior: smooth; /* Défilement fluide */
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* ================== EN-TÊTE ================== */
+header {
+  background-color: #333;
+  color: white;
+  padding: 15px 0;
+  text-align: center;
+  position: fixed;  /* Reste en haut quand on scroll */
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    text-align: left;
+  margin: 0 0 10px 0;
+  font-size: 18px;
+}
+
+/* Menu de navigation */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: blueviolet;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* ================== SECTIONS ================== */
+section {
+  padding: 100px 20px; /* L'espace en haut pour que l'en-tête ne cache pas */
+  min-height: 100vh;   /* Chaque section occupe au moins tout l'écran */
+  text-align: center;
+}
+
+/* Différencier les sections avec un léger fond */
+#accueil { background-color: burlywood; }
+#apropos { background-color: moccasin; }
+#competences { background-color: mediumturquoise; }
+#projets { background-color: rosybrown; }
+#hobbies { background-color: navajowhite; }
+#activites { background-color: darkgray; }
+#contact { background-color: aliceblue; }
+
+/* ================== PHOTO DE PROFIL ================== */
+.photo-profil {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* rend la photo ronde */
+  display: block;
+  margin: 0 auto 20px; /* centre horizontalement et espace dessous */
+  object-fit: cover;   /* recadrage si image non carrée */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* ================== LISTES ================== */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin: 10px 0;
+}
+
+/* ================== PROJETS ================== */
+.projet {
+  background-color: #fff;
+  margin: 20px auto;
+  padding: 15px;
+  max-width: 500px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.projet:hover {
+  transform: scale(1.05);
+}
+
+/* ================== FORMULAIRE ================== */
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+/* ================== PIED DE PAGE ================== */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 20px;
+}
